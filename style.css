@@ -1,1 +1,61 @@
 
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:black;
+    overflow:hidden;
+}
+
+#topBar{
+    text-align:center;
+    color:white;
+    padding:10px;
+}
+
+#timer{
+    font-size:40px;
+    font-weight:bold;
+}
+
+#score{
+    font-size:24px;
+}
+
+#gameArea{
+    position:relative;
+    width:100vw;
+    height:75vh;
+
+    background-image:url("images/background.jpg");
+    background-size:cover;
+    background-position:center;
+
+    overflow:hidden;
+}
+
+#character{
+    position:absolute;
+    width:180px;
+    left:40%;
+    top:30%;
+}
+
+#milkshake{
+    position:absolute;
+    width:90px;
+    left:20px;
+    bottom:20px;
+}
+
+#splash{
+    position:absolute;
+    width:140px;
+    display:none;
+}
+
+#message{
+    color:white;
+    text-align:center;
+    padding:10px;
+    font-size:20px;
+}
