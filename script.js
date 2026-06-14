@@ -21,11 +21,16 @@ let gameStarted = false;
 let moveInterval;
 let countdown;
 
+/* BLOCK ALL INPUT UNTIL START */
+function isLocked(){
+    return !gameStarted || gameOver;
+}
+
 /* START GAME */
 startBtn.addEventListener("click", () => {
 
-    startScreen.style.display = "none";
     gameStarted = true;
+    startScreen.style.display = "none";
 
     message.textContent = "Go!";
 
@@ -67,19 +72,19 @@ startBtn.addEventListener("click", () => {
 
 });
 
-/* MILKSHAKE CLICK */
+/* MILKSHAKE */
 milkshake.addEventListener("click", () => {
 
-    if (!gameStarted || gameOver) return;
+    if (isLocked()) return;
 
     milkshakeReady = true;
     message.textContent = "Now tap the character!";
 });
 
-/* CHARACTER CLICK */
+/* CHARACTER */
 character.addEventListener("click", () => {
 
-    if (!gameStarted || gameOver) return;
+    if (isLocked()) return;
     if (!milkshakeReady) return;
 
     milkshakeReady = false;
